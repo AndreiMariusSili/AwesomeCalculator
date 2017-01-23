@@ -34,7 +34,7 @@
             </div>
             <div class="row center-align">
                 <div class="col s10 offset-s1">
-                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" disabled>sqrt</a>
+                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" ng-click="concat('sqrt(')">sqrt</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text" ng-click="concat('(')">(</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text" ng-click="concat(')')">)</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text" ng-click="concat('%')">%</a>
@@ -46,7 +46,7 @@
             </div>
             <div class="row center-align">
                 <div class="col s10 offset-s1">
-                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" disabled>pow</a>
+                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" ng-click="concat('pow(')">pow</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text black-text" ng-click="concat('7')">7</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('8')">8</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('9')">9</a>
@@ -55,7 +55,7 @@
             </div>
             <div class="row center-align">
                 <div class="col s10 offset-s1">
-                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" disabled>n!</a>
+                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" ng-click="concat('!')">n!</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('4')">4</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('5')">5</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('6')">6</a>
@@ -64,7 +64,7 @@
             </div>
             <div class="row center-align">
                 <div class="col s10 offset-s1">
-                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" disabled>E</a>
+                    <a class="waves-effect waves-light btn btn-custom grey lighten-2 black-text hide-small" ng-click="concat('E(')">E</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('1')">1</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('2')">2</a>
                     <a class="waves-effect waves-light btn btn-custom grey lighten-5 black-text" ng-click="concat('3')">3</a>
@@ -81,12 +81,24 @@
                 </div>
             </div>
         </div>
+        <div id="calculator" class="z-depth-5" style="min-height: 70px;">
+            <div class="progress grey lighten-2" ng-if="loading">
+                <div class="indeterminate grey darken-3"></div>
+            </div>
+        </div>
     </div>
 
     <div id="footer" class="modal bottom-sheet">
         <div class="modal-content">
             <h4>Hi.</h4>
-            <p>This little app has been written by <a href="https://github.com/AndreiMariusSili" class="black-text">Andrei</a>. Hope you like it.</p>
+            <p>This little app has been written by <a href="https://github.com/AndreiMariusSili" class="black-text">Andrei</a>. It takes in a string expression and evaluates it taking into account paratheses, the order of operations and exception cases. Hope you like it.</p>
+            <p>Some example</p>
+            <ul>
+                <li>Square root function: sqrt(16) evaluates to 4</li>
+                <li>Power function: 5pow(2) evaluates to 25</li>
+                <li>Factorial function: 5! evaluates to 120</li>
+                <li>Scientific notation: 2E(2) evaluates to 200</li>
+            </ul>
         </div>
         <div class="modal-footer">
         </div>
