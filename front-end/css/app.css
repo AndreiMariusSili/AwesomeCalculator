@@ -30,6 +30,13 @@
             margin-bottom: -20px !important;
             color: #D1D1D1;
         }
+        .collection {
+            margin-top: 25px;
+        }
+        li
+        {
+            color: #D1D1D1;
+        }
 
         @media (min-width : 540px)
         {

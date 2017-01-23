@@ -239,7 +239,7 @@ public class Calculator {
           //evaluate percentage notation
           else if (subExpArray.get(i).matches("(.*)%"))
           {
-              double argument = Double.parseDouble(subExpArray.get(i).substring(1,subExpArray.get(i).length()));
+              double argument = Double.parseDouble(subExpArray.get(i).substring(0,subExpArray.get(i).indexOf("%")));
 
               double result = argument / 100;
               String resultString = Double.toString(result);
